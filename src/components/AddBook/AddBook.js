@@ -1,3 +1,5 @@
+import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -75,15 +77,15 @@ const AddProduct = () => {
                 <input name="exampleRequired" type="file" onChange={handleImageUpload} /> <br/> 
 
 
-                {imageURL && <span >Image Uploaded Successfully</span>} <br/>
+                {imageURL && <span ><FontAwesomeIcon icon={faCheckSquare} style={{color:"rgb(70, 221, 70)"}} /> Image Uploaded Successfully</span>} <br/>
 
-                {isAdded && <span>Book Added to the Database Successfully</span>} <br/>
+                {isAdded && <span><FontAwesomeIcon icon={faCheckSquare} style={{color:"rgb(70, 221, 70)"}} /> Book Added to the Database Successfully</span>} <br/>
 
 
                 {/* {errors.exampleRequired && <span>This field is required</span>} */}
                 
                 <input type="submit" />
-                <input  type="reset"/>
+                <input type="reset"/>
             </form>
         </div>
     );

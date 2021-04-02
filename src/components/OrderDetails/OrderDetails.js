@@ -51,7 +51,7 @@ const OrderDetails = () => {
                     <h4> Shipping Charge : $5</h4>
                     <h4> Payment Method : Cash On Delivery</h4>
                     <h3>Total : ${parseInt(bookPrice) + 5}</h3>
-                </div>
+            </div>
         </div>
     );
 };

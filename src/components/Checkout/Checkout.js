@@ -3,14 +3,21 @@ import { Button, Table } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { UserContext } from '../../App';
 import './Checkout.css'
+import PopUp from '../PopUp/PopUp';
 
 const Checkout = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    // console.log(loggedInUser);
+    const [isOpen, setIsOpen] = useState(false);
+    const showModal = () => {
+        setIsOpen(true);
+    };
+
+    const hideModal = () => {
+        setIsOpen(false);
+    };
 
     const {id} = useParams();
     const [book, setBook] = useState();
-    const [isOrderPlaced, setIsOrderPlaced] = useState(false);
     const {name, price, author} = book || {};
     useEffect(()=>{
         fetch(`http://localhost:8000/book/${id}`)
@@ -19,7 +26,6 @@ const Checkout = () => {
     }, [id])
 
     const handleCheckout = () =>{
-
         const orderData = {
             name:loggedInUser.name,
             email: loggedInUser.email,
@@ -28,8 +34,6 @@ const Checkout = () => {
             bookQuantity: 1,
             bookPrice: price,
             orderDate: new Date().toDateString('dd/mm/yyyy'),
-            // orderDate: new Date().getDate() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getFullYear(),
-            // orderTime: new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds()
             orderTime: new Date().toTimeString()
         }
         
@@ -44,11 +48,8 @@ const Checkout = () => {
         })
         .then(res=> res.json())
         .then(result=>{
-            // console.log(result);
-            if(result){
-                
-              setIsOrderPlaced(true)
-         
+            if(result){   
+                showModal();
             }
         })
       
@@ -89,12 +90,12 @@ const Checkout = () => {
 
             <Button onClick={()=> handleCheckout()} variant='info' className='mb-5'> Place Order </Button> <br/>
 
-            {
-                isOrderPlaced && <span>Your Order has been placed successfully!</span>
-            }
-
+            <PopUp isOpen={isOpen} hideModal={hideModal}></PopUp>
+               
         </div>
     );
 };
+
+
 
 export default Checkout;
