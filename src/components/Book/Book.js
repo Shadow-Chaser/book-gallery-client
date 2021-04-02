@@ -1,3 +1,5 @@
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router';
@@ -29,7 +31,7 @@ const Book = (props) => {
 
                         <div className="card-footer book-footer d-flex justify-content-around">
                             <h3 className='text-bold'>${price}</h3>
-                            <Button onClick={()=>handleBuyBook(_id)} variant="info">Buy Now</Button>
+                            <Button onClick={()=>handleBuyBook(_id)} variant="info"> <FontAwesomeIcon icon={faShoppingCart}/> Buy Now</Button>
 
                         </div>
                     </div>

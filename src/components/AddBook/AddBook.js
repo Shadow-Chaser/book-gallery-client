@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import './AddBook.css'
 
 const AddProduct = () => {
 
@@ -66,16 +67,15 @@ const AddProduct = () => {
     // console.log("is added: ",isAdded);
 
     return (
-        <div>
+        <div className='field'>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="book" placeholder="Book Name" ref={register} /> <br/>
-                
-                <input name="author" placeholder="Author Name" ref={register} /> <br/>
-                <input name="price" placeholder="Price" ref={register} /> <br/>
+                <input name="book" placeholder="Book Name" type="text" ref={register} /> <br/>          
+                <input name="author" placeholder="Author Name" type="text" ref={register} /> <br/>
+                <input name="price" placeholder="Price" type="number" ref={register} /> <br/>
                 <input name="exampleRequired" type="file" onChange={handleImageUpload} /> <br/> 
 
 
-                {imageURL && <span>Image Uploaded Successfully</span>} <br/>
+                {imageURL && <span >Image Uploaded Successfully</span>} <br/>
 
                 {isAdded && <span>Book Added to the Database Successfully</span>} <br/>
 
@@ -83,6 +83,7 @@ const AddProduct = () => {
                 {/* {errors.exampleRequired && <span>This field is required</span>} */}
                 
                 <input type="submit" />
+                <input  type="reset"/>
             </form>
         </div>
     );
