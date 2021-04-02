@@ -9,7 +9,7 @@ const Navigation = () => {
         <div>
 
             <Navbar bg='light' expand='lg'>
-                <Navbar.Brand>Book Shop</Navbar.Brand>
+                <Navbar.Brand> Book Gallery </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id='basic-navbar-nav'>
                     <Nav className='ml-auto'>
