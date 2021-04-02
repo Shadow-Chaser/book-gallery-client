@@ -37,7 +37,7 @@ const ManageBooks = () => {
             <Table striped bordered hover style={{width:"80%", margin:'0 auto'}}>
                 <thead>
                     <tr>
-                        <th>#</th>
+                        {/* <th>#</th> */}
                         <th>Book Name</th>
                         <th>Author Name</th>
                         <th>Price</th>
@@ -48,7 +48,7 @@ const ManageBooks = () => {
                    {
                        booksData.map(book=>
                         <tr>
-                            <td>{index++}</td>
+                            {/* <td>{index++}</td> */}
                             <td>{book.name}</td>
                             <td>{book.author}</td>
                             <td>$ {book.price}</td>
