@@ -18,6 +18,7 @@ const OrderDetails = () => {
         <div>
             <h1>Order Details</h1>
             <div className="text-left m-3">
+                <h6>OrderID: #{orderId}</h6>
                 <h3>Name: {name}</h3>
                 <h5>Email: {email}</h5>
                 <h6>Placing Date: {orderDate}</h6>

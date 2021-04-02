@@ -13,17 +13,17 @@ const Admin = () => {
         <div className='row'>
            
 
-                <aside className="col-md-3 px-0 fixed-left" id="left">
+                <div className="col-md-2 col-sm-12 px-0 fixed-left" id="left">
 
-                    <div className="list-group w-100">
+                    <div className="list-group w-100" >
                         <Button onClick={()=>{setAddBook(false); setManageBooks(true)}}>Manage Books</Button> <br/>
                         {/* <Button href='/addBook'>Add Book</Button>  */}
                         <Button onClick={()=>{setAddBook(true); setManageBooks(false)}}>Add Book</Button>
                     </div>
 
-                </aside>
+                </div>
 
-                <div className="col-md-9">
+                <div className="col-md-10 col-sm-12">
                     {
                         manageBooks && <ManageBooks></ManageBooks>
                     }

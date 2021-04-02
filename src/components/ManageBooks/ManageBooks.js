@@ -34,7 +34,7 @@ const ManageBooks = () => {
     return (
         <div>
 
-            <Table striped bordered hover>
+            <Table striped bordered hover style={{width:"80%", margin:'0 auto'}}>
                 <thead>
                     <tr>
                         <th>#</th>

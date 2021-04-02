@@ -8,6 +8,7 @@ import './Orders.css'
 const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [orders, setOrders] = useState([]);
+    let index = 1;
 
     useEffect(()=>{
         fetch('https://still-gorge-92461.herokuapp.com/orders?email='+loggedInUser.email, {
@@ -35,10 +36,10 @@ const Orders = () => {
             <h1>Order History</h1>
             
             <div className="col-md-9 table-div">
-            <Table striped bordered hover>
+            <Table striped bordered hover >
                 <thead>
                     <tr>
-                        <th>OrderID</th>
+                        <th>#</th>
                         <th>Order</th>
                         <th>Date</th>
                         <th>Action</th>
@@ -49,7 +50,7 @@ const Orders = () => {
                    {
                        orders.map(order=>
                         <tr>
-                            <td>#{order._id}</td>
+                            <td>{index++}</td>
                             <td>{order.bookName}</td>
                             <td>{order.orderDate}</td>
                             
