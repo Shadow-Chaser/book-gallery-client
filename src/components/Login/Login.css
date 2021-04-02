@@ -1,0 +1,13 @@
+.login-btn{
+    background-color: white;
+    border: 1px solid black;
+    width: 450px;
+    border-radius: 50px;
+    margin-top: 80px;
+    color: black;
+}
+
+.login-btn img{
+    width: 31px;
+
+}

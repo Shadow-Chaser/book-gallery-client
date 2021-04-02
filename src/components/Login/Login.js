@@ -5,6 +5,8 @@ import firebaseConfig from './firebase.config';
 import { Button } from 'react-bootstrap';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
+import './Login.css'
+import googleLogo from './googleLogo.png'
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -45,8 +47,8 @@ const Login = () => {
 
     return (
         <div>
-            <h1>This is login</h1>
-            <Button variant='info' onClick={handleGoogleSignIn}>Sign in with Google</Button>
+            <h1 className="mt-5">Sign-In</h1>
+            <Button variant='light' onClick={handleGoogleSignIn}  className="login-btn"> <img src={googleLogo} alt="" className="mr-5"/> Sign In with Google</Button>
         </div>
     );
 };
