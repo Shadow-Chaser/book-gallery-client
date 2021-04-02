@@ -4,9 +4,14 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { Button } from 'react-bootstrap';
 import { UserContext } from '../../App';
+import { useHistory, useLocation } from 'react-router';
 
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+    const history = useHistory();
+    const location = useLocation();
+    const { from } = location.state || { from: { pathname: "/" } }
 
     if(firebase.apps.length === 0){
         firebase.initializeApp(firebaseConfig);
@@ -22,6 +27,8 @@ const Login = () => {
             // console.log(photoURL);
             const signedInUser = {name:displayName, email:email, image:photoURL} 
             setLoggedInUser(signedInUser);
+            history.replace(from);
+
 
         }).catch((error) => {
             // Handle Errors here.
