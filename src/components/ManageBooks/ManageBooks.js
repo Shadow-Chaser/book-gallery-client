@@ -5,7 +5,7 @@ import { Button, Table } from 'react-bootstrap';
 
 const ManageBooks = () => {
     const [booksData, setBooksData] = useState([]);
-    let index=1;
+
     useEffect(()=>{
 
         fetch('https://still-gorge-92461.herokuapp.com/books')
@@ -37,7 +37,6 @@ const ManageBooks = () => {
             <Table striped bordered hover style={{width:"80%", margin:'0 auto'}}>
                 <thead>
                     <tr>
-                        {/* <th>#</th> */}
                         <th>Book Name</th>
                         <th>Author Name</th>
                         <th>Price</th>
@@ -48,11 +47,9 @@ const ManageBooks = () => {
                    {
                        booksData.map(book=>
                         <tr>
-                            {/* <td>{index++}</td> */}
                             <td>{book.name}</td>
                             <td>{book.author}</td>
                             <td>$ {book.price}</td>
-                            {/* <td><Button onClick={()=> handleDelete(book._id)} variant='danger'>Delete</Button></td> */}
                             <td> <FontAwesomeIcon icon={faEdit} style={{color:"rgb(70, 221, 70)", fontSize:"25px"}} /> <FontAwesomeIcon onClick={()=> handleDelete(book._id)} icon={faTrashAlt} style={{color:"red", fontSize:"25px", cursor:"pointer"}} /></td>
                         </tr>
                        )

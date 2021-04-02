@@ -7,7 +7,6 @@ import './Book.css'
 
 const Book = (props) => {
     const {name, author, price, image, _id} = props.book;
-    // console.log(props.book._id);
 
     const history = useHistory();
     const handleBuyBook = (id) =>{
@@ -37,23 +36,6 @@ const Book = (props) => {
                     </div>
                 </div>
 
-
-
-
-
-
-
-
-
-            {/* <Card style={{ width: '370px' }} classNameName='card m-2'>
-                <Card.Img variant="top" src={image} />
-                <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>{author}</Card.Text>
-                    <Card.Text>{price}</Card.Text>
-                    <Button variant="info">Buy Now</Button>
-                </Card.Body>
-            </Card> */}
         </div>
     );
 };

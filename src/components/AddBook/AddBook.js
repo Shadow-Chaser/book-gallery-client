@@ -14,7 +14,6 @@ const AddProduct = () => {
     
 
     const onSubmit = data => {
-        // console.log(data)
         const bookData = {
             name: data.book,
             author:data.author,
@@ -22,7 +21,6 @@ const AddProduct = () => {
             image: imageURL
           };
         
-        // console.log(bookData);
 
         const url = `https://still-gorge-92461.herokuapp.com/addBook`;
 
@@ -35,7 +33,6 @@ const AddProduct = () => {
         })
         .then(res=> res.json())
         .then(result=>{
-            // console.log(result);
             if(result){
                 setIsAdded(true);
                 
@@ -47,7 +44,6 @@ const AddProduct = () => {
     };
 
     const handleImageUpload =(event)=>{
-        // console.log(event.target.files[0]);
         const imageData = new FormData();
         imageData.set('key', 'dae1f2e63803aaa4446fc6453177f462');
         imageData.append('image', event.target.files[0]);
@@ -56,7 +52,6 @@ const AddProduct = () => {
         axios.post('https://api.imgbb.com/1/upload', 
         imageData)
         .then(function (response) {
-            // console.log(response.data.data.display_url);
           setImageURL(response.data.data.display_url);
         })
         .catch(function (error) {
@@ -65,8 +60,6 @@ const AddProduct = () => {
 
     }
 
-    // console.log(imageURL);
-    // console.log("is added: ",isAdded);
 
     return (
         <div className='field'>
@@ -82,7 +75,6 @@ const AddProduct = () => {
                 {isAdded && <span><FontAwesomeIcon icon={faCheckSquare} style={{color:"rgb(70, 221, 70)"}} /> Book Added to the Database Successfully</span>} <br/>
 
 
-                {/* {errors.exampleRequired && <span>This field is required</span>} */}
                 
                 <input type="submit" />
                 <input type="reset"/>

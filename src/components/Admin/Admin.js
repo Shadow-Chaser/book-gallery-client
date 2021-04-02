@@ -17,7 +17,6 @@ const Admin = () => {
 
                     <div className="list-group w-100" >
                         <Button onClick={()=>{setAddBook(false); setManageBooks(true)}}>Manage Books</Button> <br/>
-                        {/* <Button href='/addBook'>Add Book</Button>  */}
                         <Button onClick={()=>{setAddBook(true); setManageBooks(false)}}>Add Book</Button>
                     </div>
 
