@@ -20,7 +20,7 @@ const Checkout = () => {
     const [book, setBook] = useState();
     const {name, price, author} = book || {};
     useEffect(()=>{
-        fetch(`http://localhost:8000/book/${id}`)
+        fetch(`https://still-gorge-92461.herokuapp.com/book/${id}`)
         .then(res => res.json())
         .then(data => setBook(data))
     }, [id])
@@ -37,7 +37,7 @@ const Checkout = () => {
             orderTime: new Date().toTimeString()
         }
         
-        const url = `http://localhost:8000/addOrder`;
+        const url = `https://still-gorge-92461.herokuapp.com/addOrder`;
 
         fetch(url, {
             method:'POST',

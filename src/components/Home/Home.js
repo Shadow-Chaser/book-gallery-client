@@ -11,7 +11,7 @@ const Home = () => {
 
     useEffect(()=>{
 
-        fetch('http://localhost:8000/books')
+        fetch('https://still-gorge-92461.herokuapp.com/books')
         .then(res=>res.json())
         .then(data=>{
             setBooksData(data);

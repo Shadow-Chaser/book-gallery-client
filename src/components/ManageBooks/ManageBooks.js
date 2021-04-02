@@ -8,7 +8,7 @@ const ManageBooks = () => {
     let index=1;
     useEffect(()=>{
 
-        fetch('http://localhost:8000/books')
+        fetch('https://still-gorge-92461.herokuapp.com/books')
         .then(res=>res.json())
         .then(data=>{
             setBooksData(data);
@@ -18,7 +18,7 @@ const ManageBooks = () => {
 
     const handleDelete = (id) => {
         console.log(id);
-        fetch(`http://localhost:8000/delete/${id}`,{
+        fetch(`https://still-gorge-92461.herokuapp.com/delete/${id}`,{
              method:"DELETE"
         })
         .then(res => res.json())

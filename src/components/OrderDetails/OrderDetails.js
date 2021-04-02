@@ -9,7 +9,7 @@ const OrderDetails = () => {
 
     const {name, email, bookName,bookQuantity, bookPrice, orderDate, orderTime} = orderDetails || {};
     useEffect(()=>{
-        fetch(`http://localhost:8000/orderDetails/${orderId}`)
+        fetch(`https://still-gorge-92461.herokuapp.com/orderDetails/${orderId}`)
         .then(res => res.json())
         .then(data => setOrderDetails(data))
     }, [orderId])

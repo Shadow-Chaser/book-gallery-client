@@ -24,7 +24,7 @@ const AddProduct = () => {
         
         // console.log(bookData);
 
-        const url = `http://localhost:8000/addBook`;
+        const url = `https://still-gorge-92461.herokuapp.com/addBook`;
 
         fetch(url, {
             method:'POST',
